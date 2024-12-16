@@ -1,0 +1,469 @@
+---
+# ROOTPATH should be set to the absolute path of crypto material starting directory
+# for example: export ROOTPATH=/home/ubuntu/mywork/vars/keyfiles
+"name": "cd16a53f2f_net"
+"x-type": "hlfv-2.4.8"
+"version": "1.0.0"
+"client":
+  "organization": "governmentagency.claim.com"
+  "cryptoconfig":
+    "path": "${ROOTPATH}"
+  "connection":
+    "timeout":
+      "peer":
+        "endorser": "300"
+        "eventHub": "300"
+        "eventReg": "300"
+      "orderer": "300"
+  "credentialStore":
+    "path": "/tmp/state-store"
+    "cryptoStore":
+      "path": "/tmp/msp"
+  "BCCSP":
+    "security":
+      "enabled": "true"
+      "default":
+        "provider": "SW"
+      "hashAlgorithm": "SHA2"
+      "softVerify": "true"
+      "level": "256"
+
+"channels":
+  "autochannel":
+    "orderers":
+    - "orderer1.claim.com"
+    - "orderer2.claim.com"
+    - "orderer3.claim.com"
+    - "orderer4.claim.com"
+    "peers":
+      "peer1.policedepartment.claim.com":
+        "endorsingPeer": true
+        "chaincodeQuery": true
+        "eventSource": true
+      "peer1.governmentagency.claim.com":
+        "endorsingPeer": true
+        "chaincodeQuery": true
+        "eventSource": true
+      "peer1.insurancecompany.claim.com":
+        "endorsingPeer": true
+        "chaincodeQuery": true
+        "eventSource": true
+      "peer1.vehiclemanufacturer.claim.com":
+        "endorsingPeer": true
+        "chaincodeQuery": true
+        "eventSource": true
+
+"organizations":
+  "claim.com":
+    "mspid": "claim-com"
+    "cryptoPath": "ordererOrganizations/claim.com/users/{username}@claim.com/msp"
+    "orderers":
+    - "orderer1.claim.com"
+    - "orderer2.claim.com"
+    - "orderer3.claim.com"
+    - "orderer4.claim.com"
+    "certificateAuthorities":
+  "governmentagency.claim.com":
+    "mspid": "governmentagency-claim-com"
+    "cryptoPath": "peerOrganizations/governmentagency.claim.com/users/{username}@governmentagency.claim.com/msp"
+    "peers":
+    - "peer1.governmentagency.claim.com"
+    "certificateAuthorities":
+    - "ca1.governmentagency.claim.com"
+  "insurancecompany.claim.com":
+    "mspid": "insurancecompany-claim-com"
+    "cryptoPath": "peerOrganizations/insurancecompany.claim.com/users/{username}@insurancecompany.claim.com/msp"
+    "peers":
+    - "peer1.insurancecompany.claim.com"
+    "certificateAuthorities":
+    - "ca1.insurancecompany.claim.com"
+  "policedepartment.claim.com":
+    "mspid": "policedepartment-claim-com"
+    "cryptoPath": "peerOrganizations/policedepartment.claim.com/users/{username}@policedepartment.claim.com/msp"
+    "peers":
+    - "peer1.policedepartment.claim.com"
+    "certificateAuthorities":
+    - "ca1.policedepartment.claim.com"
+  "vehiclemanufacturer.claim.com":
+    "mspid": "vehiclemanufacturer-claim-com"
+    "cryptoPath": "peerOrganizations/vehiclemanufacturer.claim.com/users/{username}@vehiclemanufacturer.claim.com/msp"
+    "peers":
+    - "peer1.vehiclemanufacturer.claim.com"
+    "certificateAuthorities":
+    - "ca1.vehiclemanufacturer.claim.com"
+
+"orderers":
+  "orderer1.claim.com":
+    "url": "grpcs://192.168.29.146:7012"
+    "grpcOptions":
+      "ssl-target-name-override": "orderer1.claim.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIIClzCCAjygAwIBAgIUfKSBUJ9UGJrCAV6wgaCBstscKGswCgYIKoZIzj0EAwIw
+        ZjELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH
+        DAdSYWxlaWdoMRIwEAYDVQQKDAljbGFpbS5jb20xGDAWBgNVBAMMD3Rsc2NhLmNs
+        YWltLmNvbTAeFw0yNDEyMDIxNzM5MDlaFw0zNDExMzAxNzM5MDlaMGYxCzAJBgNV
+        BAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UEBwwHUmFsZWln
+        aDESMBAGA1UECgwJY2xhaW0uY29tMRgwFgYDVQQDDA90bHNjYS5jbGFpbS5jb20w
+        WTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAT0hnQpu//JmmVF4NFgm7x89Rx6z6bC
+        GpV1o+8zmpjmAmweXJKvTiQ3JD3o5XolZAi2DV21ettNht/8SrjMgPoKo4HHMIHE
+        MB0GA1UdDgQWBBQWpIxX7CC6jJNP4nO/YGgFl/56GjAfBgNVHSMEGDAWgBQWpIxX
+        7CC6jJNP4nO/YGgFl/56GjAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIB
+        pjAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwQgYDVR0RBDswOYcEwKgd
+        koIPdGxzY2EuY2xhaW0uY29tgg90bHNjYS1jbGFpbS1jb22CCWxvY2FsaG9zdIcE
+        fwAAATAKBggqhkjOPQQDAgNJADBGAiEAzrmMwCTQ0VzqGMYP+M0No5EFjuzYuJ8y
+        IFsw1eAAQqACIQD3mU7bie88SpZB3LD7hS8nlTtFlAi31y/RhT/jhWc48g==
+        -----END CERTIFICATE-----
+
+  "orderer2.claim.com":
+    "url": "grpcs://192.168.29.146:7013"
+    "grpcOptions":
+      "ssl-target-name-override": "orderer2.claim.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIIClzCCAjygAwIBAgIUfKSBUJ9UGJrCAV6wgaCBstscKGswCgYIKoZIzj0EAwIw
+        ZjELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH
+        DAdSYWxlaWdoMRIwEAYDVQQKDAljbGFpbS5jb20xGDAWBgNVBAMMD3Rsc2NhLmNs
+        YWltLmNvbTAeFw0yNDEyMDIxNzM5MDlaFw0zNDExMzAxNzM5MDlaMGYxCzAJBgNV
+        BAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UEBwwHUmFsZWln
+        aDESMBAGA1UECgwJY2xhaW0uY29tMRgwFgYDVQQDDA90bHNjYS5jbGFpbS5jb20w
+        WTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAT0hnQpu//JmmVF4NFgm7x89Rx6z6bC
+        GpV1o+8zmpjmAmweXJKvTiQ3JD3o5XolZAi2DV21ettNht/8SrjMgPoKo4HHMIHE
+        MB0GA1UdDgQWBBQWpIxX7CC6jJNP4nO/YGgFl/56GjAfBgNVHSMEGDAWgBQWpIxX
+        7CC6jJNP4nO/YGgFl/56GjAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIB
+        pjAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwQgYDVR0RBDswOYcEwKgd
+        koIPdGxzY2EuY2xhaW0uY29tgg90bHNjYS1jbGFpbS1jb22CCWxvY2FsaG9zdIcE
+        fwAAATAKBggqhkjOPQQDAgNJADBGAiEAzrmMwCTQ0VzqGMYP+M0No5EFjuzYuJ8y
+        IFsw1eAAQqACIQD3mU7bie88SpZB3LD7hS8nlTtFlAi31y/RhT/jhWc48g==
+        -----END CERTIFICATE-----
+
+  "orderer3.claim.com":
+    "url": "grpcs://192.168.29.146:7014"
+    "grpcOptions":
+      "ssl-target-name-override": "orderer3.claim.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIIClzCCAjygAwIBAgIUfKSBUJ9UGJrCAV6wgaCBstscKGswCgYIKoZIzj0EAwIw
+        ZjELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH
+        DAdSYWxlaWdoMRIwEAYDVQQKDAljbGFpbS5jb20xGDAWBgNVBAMMD3Rsc2NhLmNs
+        YWltLmNvbTAeFw0yNDEyMDIxNzM5MDlaFw0zNDExMzAxNzM5MDlaMGYxCzAJBgNV
+        BAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UEBwwHUmFsZWln
+        aDESMBAGA1UECgwJY2xhaW0uY29tMRgwFgYDVQQDDA90bHNjYS5jbGFpbS5jb20w
+        WTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAT0hnQpu//JmmVF4NFgm7x89Rx6z6bC
+        GpV1o+8zmpjmAmweXJKvTiQ3JD3o5XolZAi2DV21ettNht/8SrjMgPoKo4HHMIHE
+        MB0GA1UdDgQWBBQWpIxX7CC6jJNP4nO/YGgFl/56GjAfBgNVHSMEGDAWgBQWpIxX
+        7CC6jJNP4nO/YGgFl/56GjAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIB
+        pjAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwQgYDVR0RBDswOYcEwKgd
+        koIPdGxzY2EuY2xhaW0uY29tgg90bHNjYS1jbGFpbS1jb22CCWxvY2FsaG9zdIcE
+        fwAAATAKBggqhkjOPQQDAgNJADBGAiEAzrmMwCTQ0VzqGMYP+M0No5EFjuzYuJ8y
+        IFsw1eAAQqACIQD3mU7bie88SpZB3LD7hS8nlTtFlAi31y/RhT/jhWc48g==
+        -----END CERTIFICATE-----
+
+  "orderer4.claim.com":
+    "url": "grpcs://192.168.29.146:7015"
+    "grpcOptions":
+      "ssl-target-name-override": "orderer4.claim.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIIClzCCAjygAwIBAgIUfKSBUJ9UGJrCAV6wgaCBstscKGswCgYIKoZIzj0EAwIw
+        ZjELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH
+        DAdSYWxlaWdoMRIwEAYDVQQKDAljbGFpbS5jb20xGDAWBgNVBAMMD3Rsc2NhLmNs
+        YWltLmNvbTAeFw0yNDEyMDIxNzM5MDlaFw0zNDExMzAxNzM5MDlaMGYxCzAJBgNV
+        BAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UEBwwHUmFsZWln
+        aDESMBAGA1UECgwJY2xhaW0uY29tMRgwFgYDVQQDDA90bHNjYS5jbGFpbS5jb20w
+        WTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAT0hnQpu//JmmVF4NFgm7x89Rx6z6bC
+        GpV1o+8zmpjmAmweXJKvTiQ3JD3o5XolZAi2DV21ettNht/8SrjMgPoKo4HHMIHE
+        MB0GA1UdDgQWBBQWpIxX7CC6jJNP4nO/YGgFl/56GjAfBgNVHSMEGDAWgBQWpIxX
+        7CC6jJNP4nO/YGgFl/56GjAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIB
+        pjAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwQgYDVR0RBDswOYcEwKgd
+        koIPdGxzY2EuY2xhaW0uY29tgg90bHNjYS1jbGFpbS1jb22CCWxvY2FsaG9zdIcE
+        fwAAATAKBggqhkjOPQQDAgNJADBGAiEAzrmMwCTQ0VzqGMYP+M0No5EFjuzYuJ8y
+        IFsw1eAAQqACIQD3mU7bie88SpZB3LD7hS8nlTtFlAi31y/RhT/jhWc48g==
+        -----END CERTIFICATE-----
+
+"peers":
+  "peer1.policedepartment.claim.com":
+    "url": "grpcs://192.168.29.146:7004"
+    "grpcOptions":
+      "ssl-target-name-override": "peer1.policedepartment.claim.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIIDAjCCAqigAwIBAgIUFKFNbv3T8Zk6ziGvFSfQeJnWdFkwCgYIKoZIzj0EAwIw
+        gYkxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEjMCEGA1UECgwacG9saWNlZGVwYXJ0bWVudC5jbGFpbS5jb20x
+        KjAoBgNVBAMMIXRsc2NhMS5wb2xpY2VkZXBhcnRtZW50LmNsYWltLmNvbTAeFw0y
+        NDEyMDIxNzQwMDRaFw0zNDExMzAxNzQwMDRaMIGJMQswCQYDVQQGEwJVUzEXMBUG
+        A1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVpZ2gxIzAhBgNVBAoM
+        GnBvbGljZWRlcGFydG1lbnQuY2xhaW0uY29tMSowKAYDVQQDDCF0bHNjYTEucG9s
+        aWNlZGVwYXJ0bWVudC5jbGFpbS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC
+        AAQau2YeLMYtPahd7wRTQxcZKHy9ndgWYtBXT6DuV933m2EweuBLdb4pEFvmSc2Z
+        7WSCwyotIYae/ZtL13Oh15QZo4HrMIHoMB0GA1UdDgQWBBShorUCrMKCcY3IQ4Zf
+        e9yFN9pPXDAfBgNVHSMEGDAWgBShorUCrMKCcY3IQ4Zfe9yFN9pPXDAPBgNVHRMB
+        Af8EBTADAQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYI
+        KwYBBQUHAwIwZgYDVR0RBF8wXYcEwKgdkoIhdGxzY2ExLnBvbGljZWRlcGFydG1l
+        bnQuY2xhaW0uY29tgiF0bHNjYTEtcG9saWNlZGVwYXJ0bWVudC1jbGFpbS1jb22C
+        CWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNIADBFAiBm1RBLIaL6tTN7D12l
+        UZdTfvZzYG70J8yANFc5tawCDAIhAPYYkHCJjlj5ajbiVYG1WZ2uWGVmctSzoJDj
+        GD2nxN2W
+        -----END CERTIFICATE-----
+
+  "peer1.governmentagency.claim.com":
+    "url": "grpcs://192.168.29.146:7005"
+    "grpcOptions":
+      "ssl-target-name-override": "peer1.governmentagency.claim.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIIDAzCCAqigAwIBAgIUDfJLJXCtwbY2sD4y1e9x/cR8fswwCgYIKoZIzj0EAwIw
+        gYkxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEjMCEGA1UECgwaZ292ZXJubWVudGFnZW5jeS5jbGFpbS5jb20x
+        KjAoBgNVBAMMIXRsc2NhMS5nb3Zlcm5tZW50YWdlbmN5LmNsYWltLmNvbTAeFw0y
+        NDEyMDIxNzM5MzdaFw0zNDExMzAxNzM5MzdaMIGJMQswCQYDVQQGEwJVUzEXMBUG
+        A1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVpZ2gxIzAhBgNVBAoM
+        GmdvdmVybm1lbnRhZ2VuY3kuY2xhaW0uY29tMSowKAYDVQQDDCF0bHNjYTEuZ292
+        ZXJubWVudGFnZW5jeS5jbGFpbS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC
+        AASWc1GjL2nLa59RISLiUZvvrWKXjcByJg7w07MVkjKQZ/rDaXyYEhUFrbNJCyTr
+        icgjF/pv3yD4UTz6WKyOjWxho4HrMIHoMB0GA1UdDgQWBBRE0B/9BAMIvw7UUFaj
+        Bb0dnRFG+DAfBgNVHSMEGDAWgBRE0B/9BAMIvw7UUFajBb0dnRFG+DAPBgNVHRMB
+        Af8EBTADAQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYI
+        KwYBBQUHAwIwZgYDVR0RBF8wXYcEwKgdkoIhdGxzY2ExLmdvdmVybm1lbnRhZ2Vu
+        Y3kuY2xhaW0uY29tgiF0bHNjYTEtZ292ZXJubWVudGFnZW5jeS1jbGFpbS1jb22C
+        CWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNJADBGAiEAs9NjX7mYXQ2y3YUy
+        KuiRhPw3bKUUNqmQpQRRHPPVn5ICIQClVu+lePn95i/VNwCY8VAeWMjeIkrQPoLl
+        mvCzboVNOQ==
+        -----END CERTIFICATE-----
+
+  "peer1.insurancecompany.claim.com":
+    "url": "grpcs://192.168.29.146:7006"
+    "grpcOptions":
+      "ssl-target-name-override": "peer1.insurancecompany.claim.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIIDAzCCAqigAwIBAgIULAh81YuNpTUmwA3A11qYzLEoVukwCgYIKoZIzj0EAwIw
+        gYkxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEjMCEGA1UECgwaaW5zdXJhbmNlY29tcGFueS5jbGFpbS5jb20x
+        KjAoBgNVBAMMIXRsc2NhMS5pbnN1cmFuY2Vjb21wYW55LmNsYWltLmNvbTAeFw0y
+        NDEyMDIxNzM5NTBaFw0zNDExMzAxNzM5NTBaMIGJMQswCQYDVQQGEwJVUzEXMBUG
+        A1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVpZ2gxIzAhBgNVBAoM
+        Gmluc3VyYW5jZWNvbXBhbnkuY2xhaW0uY29tMSowKAYDVQQDDCF0bHNjYTEuaW5z
+        dXJhbmNlY29tcGFueS5jbGFpbS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC
+        AAQJ3+MXz85JDEfrv6/hpwIHjHsd9h7aSeeYeevL4F61ysdCk0nPAf5jTYj8dtbV
+        Y0pElOzDGmWOkQnEqBM/Q11Do4HrMIHoMB0GA1UdDgQWBBQXSuXmqqCRlETQvgXW
+        VDLsU5GjazAfBgNVHSMEGDAWgBQXSuXmqqCRlETQvgXWVDLsU5GjazAPBgNVHRMB
+        Af8EBTADAQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYI
+        KwYBBQUHAwIwZgYDVR0RBF8wXYcEwKgdkoIhdGxzY2ExLmluc3VyYW5jZWNvbXBh
+        bnkuY2xhaW0uY29tgiF0bHNjYTEtaW5zdXJhbmNlY29tcGFueS1jbGFpbS1jb22C
+        CWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNJADBGAiEAxL3LmPrwoEBsEw2X
+        DmMBQS5tY4LZvPFHlMSNpona4iECIQC7fOtqHunCi160fJwlF8xnYjpBDEmwB8Hr
+        kzWOvKp8Xg==
+        -----END CERTIFICATE-----
+
+  "peer1.vehiclemanufacturer.claim.com":
+    "url": "grpcs://192.168.29.146:7007"
+    "grpcOptions":
+      "ssl-target-name-override": "peer1.vehiclemanufacturer.claim.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIIDFTCCArqgAwIBAgIUQDRvP/gt7C0wuXQXUfdCzPu8uugwCgYIKoZIzj0EAwIw
+        gY8xCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEmMCQGA1UECgwddmVoaWNsZW1hbnVmYWN0dXJlci5jbGFpbS5j
+        b20xLTArBgNVBAMMJHRsc2NhMS52ZWhpY2xlbWFudWZhY3R1cmVyLmNsYWltLmNv
+        bTAeFw0yNDEyMDIxNzQwMTdaFw0zNDExMzAxNzQwMTdaMIGPMQswCQYDVQQGEwJV
+        UzEXMBUGA1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVpZ2gxJjAk
+        BgNVBAoMHXZlaGljbGVtYW51ZmFjdHVyZXIuY2xhaW0uY29tMS0wKwYDVQQDDCR0
+        bHNjYTEudmVoaWNsZW1hbnVmYWN0dXJlci5jbGFpbS5jb20wWTATBgcqhkjOPQIB
+        BggqhkjOPQMBBwNCAARCKj4k9XNgaXiIHF9QXEnfhkhroYZQJ652lhcn/dXT8FMJ
+        uPssN3lMN9fHGodHCbbscIy17B4jyOK7ajLqC2wqo4HxMIHuMB0GA1UdDgQWBBSB
+        yzF3crfaMoxAD9FpcrpoTbPTADAfBgNVHSMEGDAWgBSByzF3crfaMoxAD9Fpcrpo
+        TbPTADAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAU
+        BggrBgEFBQcDAQYIKwYBBQUHAwIwbAYDVR0RBGUwY4cEwKgdkoIkdGxzY2ExLnZl
+        aGljbGVtYW51ZmFjdHVyZXIuY2xhaW0uY29tgiR0bHNjYTEtdmVoaWNsZW1hbnVm
+        YWN0dXJlci1jbGFpbS1jb22CCWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNJ
+        ADBGAiEAvbJjK9dYE6rYbmDSb2FNVSuIYKQanzKTPRdrG/a1zigCIQCG51temraE
+        MY5wQ9ZtuATUpkR805DadycG/A0I1QZe5Q==
+        -----END CERTIFICATE-----
+
+"certificateAuthorities":
+  "ca1.policedepartment.claim.com":
+    "url": "https://192.168.29.146:7000"
+    "tlsCACerts":
+      "pem":
+      - |
+        -----BEGIN CERTIFICATE-----
+        MIIC9jCCApygAwIBAgIUNyC6gKduBoaz/02z6IVdRxtQ2dYwCgYIKoZIzj0EAwIw
+        gYYxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEjMCEGA1UECgwacG9saWNlZGVwYXJ0bWVudC5jbGFpbS5jb20x
+        JzAlBgNVBAMMHmNhMS5wb2xpY2VkZXBhcnRtZW50LmNsYWltLmNvbTAeFw0yNDEy
+        MDIxNzQwMDNaFw0zNDExMzAxNzQwMDNaMIGGMQswCQYDVQQGEwJVUzEXMBUGA1UE
+        CAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVpZ2gxIzAhBgNVBAoMGnBv
+        bGljZWRlcGFydG1lbnQuY2xhaW0uY29tMScwJQYDVQQDDB5jYTEucG9saWNlZGVw
+        YXJ0bWVudC5jbGFpbS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQ9vemI
+        yNF4laz7NClMcQD/1VlWLKDUnUgweZ54tbR3aw5HeRd8l2pIJsceuhM5UdZC7V68
+        WOtJJmQkHKYAAW4no4HlMIHiMB0GA1UdDgQWBBRsTZoTXmL7esqrBWRZfENLEr2S
+        fDAfBgNVHSMEGDAWgBRsTZoTXmL7esqrBWRZfENLEr2SfDAPBgNVHRMBAf8EBTAD
+        AQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUH
+        AwIwYAYDVR0RBFkwV4cEwKgdkoIeY2ExLnBvbGljZWRlcGFydG1lbnQuY2xhaW0u
+        Y29tgh5jYTEtcG9saWNlZGVwYXJ0bWVudC1jbGFpbS1jb22CCWxvY2FsaG9zdIcE
+        fwAAATAKBggqhkjOPQQDAgNIADBFAiEAjFkurtG1owklq6EgX1GoaHh5/3cAZnZd
+        s45RlZAn3DMCICFuN+ucRw1BTJ/3cHpWZsw7eIDqZsYTrCCSUvYbRnpJ
+        -----END CERTIFICATE-----
+
+    "httpOptions":
+      "verify": "false"
+    "caName": "ca1"
+    "registrar":
+      "enrollId": "admin"
+      "enrollSecret": "adminpw"
+  "ca1.governmentagency.claim.com":
+    "url": "https://192.168.29.146:7001"
+    "tlsCACerts":
+      "pem":
+      - |
+        -----BEGIN CERTIFICATE-----
+        MIIC9jCCApygAwIBAgIUdXgo+qDx1h8Q+4qTqs2wL6Dh6AYwCgYIKoZIzj0EAwIw
+        gYYxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEjMCEGA1UECgwaZ292ZXJubWVudGFnZW5jeS5jbGFpbS5jb20x
+        JzAlBgNVBAMMHmNhMS5nb3Zlcm5tZW50YWdlbmN5LmNsYWltLmNvbTAeFw0yNDEy
+        MDIxNzM5MzdaFw0zNDExMzAxNzM5MzdaMIGGMQswCQYDVQQGEwJVUzEXMBUGA1UE
+        CAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVpZ2gxIzAhBgNVBAoMGmdv
+        dmVybm1lbnRhZ2VuY3kuY2xhaW0uY29tMScwJQYDVQQDDB5jYTEuZ292ZXJubWVu
+        dGFnZW5jeS5jbGFpbS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARnBMpx
+        1+xQ7y3MOCFfRpI2oO0kYpvimiwWt8mh2MEGy4zKu5mr6uj3qLDE79DdvMNeIYYq
+        6ywz+7ZpriuneFIho4HlMIHiMB0GA1UdDgQWBBShmWedlfvS/apDWDStbftsqtzp
+        /zAfBgNVHSMEGDAWgBShmWedlfvS/apDWDStbftsqtzp/zAPBgNVHRMBAf8EBTAD
+        AQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUH
+        AwIwYAYDVR0RBFkwV4cEwKgdkoIeY2ExLmdvdmVybm1lbnRhZ2VuY3kuY2xhaW0u
+        Y29tgh5jYTEtZ292ZXJubWVudGFnZW5jeS1jbGFpbS1jb22CCWxvY2FsaG9zdIcE
+        fwAAATAKBggqhkjOPQQDAgNIADBFAiEAoISvpL4DykuEaulkLxotTxOQYMnQtP8N
+        HqRgT9jTA6oCICLQmaugig7WZh5rZapZlh4757RMiydt1uJI+fwqhbzx
+        -----END CERTIFICATE-----
+
+    "httpOptions":
+      "verify": "false"
+    "caName": "ca1"
+    "registrar":
+      "enrollId": "admin"
+      "enrollSecret": "adminpw"
+  "ca1.insurancecompany.claim.com":
+    "url": "https://192.168.29.146:7002"
+    "tlsCACerts":
+      "pem":
+      - |
+        -----BEGIN CERTIFICATE-----
+        MIIC9jCCApygAwIBAgIUVKSGIIuk48GIiLc5LleS/nC9pWMwCgYIKoZIzj0EAwIw
+        gYYxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEjMCEGA1UECgwaaW5zdXJhbmNlY29tcGFueS5jbGFpbS5jb20x
+        JzAlBgNVBAMMHmNhMS5pbnN1cmFuY2Vjb21wYW55LmNsYWltLmNvbTAeFw0yNDEy
+        MDIxNzM5NTBaFw0zNDExMzAxNzM5NTBaMIGGMQswCQYDVQQGEwJVUzEXMBUGA1UE
+        CAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVpZ2gxIzAhBgNVBAoMGmlu
+        c3VyYW5jZWNvbXBhbnkuY2xhaW0uY29tMScwJQYDVQQDDB5jYTEuaW5zdXJhbmNl
+        Y29tcGFueS5jbGFpbS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASOAjfp
+        h0uCf/TgUtS158KvaT56+e0iEcQHQ80cGomh3fj/1rtgMGS5B3JsNq9vz2+DV3x1
+        t9AqWjGlvKDDA8y5o4HlMIHiMB0GA1UdDgQWBBTFqpKJVmZ1X0r9tK6bdvzypEyO
+        yzAfBgNVHSMEGDAWgBTFqpKJVmZ1X0r9tK6bdvzypEyOyzAPBgNVHRMBAf8EBTAD
+        AQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUH
+        AwIwYAYDVR0RBFkwV4cEwKgdkoIeY2ExLmluc3VyYW5jZWNvbXBhbnkuY2xhaW0u
+        Y29tgh5jYTEtaW5zdXJhbmNlY29tcGFueS1jbGFpbS1jb22CCWxvY2FsaG9zdIcE
+        fwAAATAKBggqhkjOPQQDAgNIADBFAiEAg25A2I3KFagcKwDutneDE+nh4HUm+k9u
+        lZGyVMfjoZECIFoKyf/PviP741M+gjtjTSxbFQav3eV7F3qIiXPu7sek
+        -----END CERTIFICATE-----
+
+    "httpOptions":
+      "verify": "false"
+    "caName": "ca1"
+    "registrar":
+      "enrollId": "admin"
+      "enrollSecret": "adminpw"
+  "ca1.vehiclemanufacturer.claim.com":
+    "url": "https://192.168.29.146:7003"
+    "tlsCACerts":
+      "pem":
+      - |
+        -----BEGIN CERTIFICATE-----
+        MIIDCTCCAq6gAwIBAgIUDU/PT47vQiYlkUz1rS0rYYl3v0AwCgYIKoZIzj0EAwIw
+        gYwxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEmMCQGA1UECgwddmVoaWNsZW1hbnVmYWN0dXJlci5jbGFpbS5j
+        b20xKjAoBgNVBAMMIWNhMS52ZWhpY2xlbWFudWZhY3R1cmVyLmNsYWltLmNvbTAe
+        Fw0yNDEyMDIxNzQwMTdaFw0zNDExMzAxNzQwMTdaMIGMMQswCQYDVQQGEwJVUzEX
+        MBUGA1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVpZ2gxJjAkBgNV
+        BAoMHXZlaGljbGVtYW51ZmFjdHVyZXIuY2xhaW0uY29tMSowKAYDVQQDDCFjYTEu
+        dmVoaWNsZW1hbnVmYWN0dXJlci5jbGFpbS5jb20wWTATBgcqhkjOPQIBBggqhkjO
+        PQMBBwNCAAQNF1MC7ZywPB2MzsiSlvSxeJ4ZXqKIeXRXWvYBfrAmSEP6f1pLxKiZ
+        nFkqAaRm8WUFAEPgauNOTpK8piTFUgADo4HrMIHoMB0GA1UdDgQWBBT8mxEnZ3Fw
+        G3cUHmOVoBCtF1uk3TAfBgNVHSMEGDAWgBT8mxEnZ3FwG3cUHmOVoBCtF1uk3TAP
+        BgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEF
+        BQcDAQYIKwYBBQUHAwIwZgYDVR0RBF8wXYcEwKgdkoIhY2ExLnZlaGljbGVtYW51
+        ZmFjdHVyZXIuY2xhaW0uY29tgiFjYTEtdmVoaWNsZW1hbnVmYWN0dXJlci1jbGFp
+        bS1jb22CCWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNJADBGAiEAuRZLbxVA
+        eS+yH+puo5AAq/Gr3Ct6R16GGWeFGmv5LH0CIQCGpYtkOyS5Cc1sEZN/DZ9WgwcL
+        /EYMU0FtvBkpYzupFQ==
+        -----END CERTIFICATE-----
+
+    "httpOptions":
+      "verify": "false"
+    "caName": "ca1"
+    "registrar":
+      "enrollId": "admin"
+      "enrollSecret": "adminpw"
+
+"entityMatchers":
+  "orderer":
+  - "mappedHost": "orderer1.claim.com"
+    "pattern": "(\\w*)orderer1.claim.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "orderer1.claim.com"
+    "urlSubstitutionExp": "192.168.29.146:7012"
+  - "mappedHost": "orderer2.claim.com"
+    "pattern": "(\\w*)orderer2.claim.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "orderer2.claim.com"
+    "urlSubstitutionExp": "192.168.29.146:7013"
+  - "mappedHost": "orderer3.claim.com"
+    "pattern": "(\\w*)orderer3.claim.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "orderer3.claim.com"
+    "urlSubstitutionExp": "192.168.29.146:7014"
+  - "mappedHost": "orderer4.claim.com"
+    "pattern": "(\\w*)orderer4.claim.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "orderer4.claim.com"
+    "urlSubstitutionExp": "192.168.29.146:7015"
+  
+  "peer":
+  - "mappedHost": "peer1.policedepartment.claim.com"
+    "pattern": "(\\w*)peer1.policedepartment.claim.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "peer1.policedepartment.claim.com"
+    "urlSubstitutionExp": "192.168.29.146:7004"
+  - "mappedHost": "peer1.governmentagency.claim.com"
+    "pattern": "(\\w*)peer1.governmentagency.claim.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "peer1.governmentagency.claim.com"
+    "urlSubstitutionExp": "192.168.29.146:7005"
+  - "mappedHost": "peer1.insurancecompany.claim.com"
+    "pattern": "(\\w*)peer1.insurancecompany.claim.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "peer1.insurancecompany.claim.com"
+    "urlSubstitutionExp": "192.168.29.146:7006"
+  - "mappedHost": "peer1.vehiclemanufacturer.claim.com"
+    "pattern": "(\\w*)peer1.vehiclemanufacturer.claim.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "peer1.vehiclemanufacturer.claim.com"
+    "urlSubstitutionExp": "192.168.29.146:7007"
+  
+  "certificateAuthorities":
+  - "mappedHost": "ca1.policedepartment.claim.com"
+    "pattern": "(\\w*)ca1.policedepartment.claim.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "ca1.policedepartment.claim.com"
+    "urlSubstitutionExp": "192.168.29.146:7000"
+  - "mappedHost": "ca1.governmentagency.claim.com"
+    "pattern": "(\\w*)ca1.governmentagency.claim.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "ca1.governmentagency.claim.com"
+    "urlSubstitutionExp": "192.168.29.146:7001"
+  - "mappedHost": "ca1.insurancecompany.claim.com"
+    "pattern": "(\\w*)ca1.insurancecompany.claim.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "ca1.insurancecompany.claim.com"
+    "urlSubstitutionExp": "192.168.29.146:7002"
+  - "mappedHost": "ca1.vehiclemanufacturer.claim.com"
+    "pattern": "(\\w*)ca1.vehiclemanufacturer.claim.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "ca1.vehiclemanufacturer.claim.com"
+    "urlSubstitutionExp": "192.168.29.146:7003"

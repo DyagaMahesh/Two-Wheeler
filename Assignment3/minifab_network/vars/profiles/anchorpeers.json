@@ -1,0 +1,46 @@
+{
+  "governmentagency-claim-com": {
+    "AnchorPeers": {
+      "mod_policy": "Admins",
+      "value": {
+        "anchor_peers": [
+           { "host": "192.168.29.146", "port": "7005" }
+        ]
+      },
+      "version": "0"
+    }
+  },
+  "insurancecompany-claim-com": {
+    "AnchorPeers": {
+      "mod_policy": "Admins",
+      "value": {
+        "anchor_peers": [
+           { "host": "192.168.29.146", "port": "7006" }
+        ]
+      },
+      "version": "0"
+    }
+  },
+  "policedepartment-claim-com": {
+    "AnchorPeers": {
+      "mod_policy": "Admins",
+      "value": {
+        "anchor_peers": [
+           { "host": "192.168.29.146", "port": "7004" }
+        ]
+      },
+      "version": "0"
+    }
+  },
+  "vehiclemanufacturer-claim-com": {
+    "AnchorPeers": {
+      "mod_policy": "Admins",
+      "value": {
+        "anchor_peers": [
+           { "host": "192.168.29.146", "port": "7007" }
+        ]
+      },
+      "version": "0"
+    }
+  }
+}

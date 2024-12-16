@@ -1,0 +1,163 @@
+{
+  "Admin@claim.com": {
+    "key": "Admin@claim.com",
+    "org": "claim.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/claim.com/users/Admin@claim.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/claim.com/users/Admin@claim.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@governmentagency.claim.com": {
+    "key": "Admin@governmentagency.claim.com",
+    "org": "governmentagency.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/governmentagency.claim.com/users/Admin@governmentagency.claim.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/governmentagency.claim.com/users/Admin@governmentagency.claim.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@insurancecompany.claim.com": {
+    "key": "Admin@insurancecompany.claim.com",
+    "org": "insurancecompany.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/insurancecompany.claim.com/users/Admin@insurancecompany.claim.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/insurancecompany.claim.com/users/Admin@insurancecompany.claim.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@policedepartment.claim.com": {
+    "key": "Admin@policedepartment.claim.com",
+    "org": "policedepartment.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/policedepartment.claim.com/users/Admin@policedepartment.claim.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/policedepartment.claim.com/users/Admin@policedepartment.claim.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@vehiclemanufacturer.claim.com": {
+    "key": "Admin@vehiclemanufacturer.claim.com",
+    "org": "vehiclemanufacturer.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/vehiclemanufacturer.claim.com/users/Admin@vehiclemanufacturer.claim.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/vehiclemanufacturer.claim.com/users/Admin@vehiclemanufacturer.claim.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "claim.com": {
+    "key": "claim.com",
+    "org": "claim.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/claim.com/ca/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/claim.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "claim.com.tlsca": {
+    "key": "claim.com",
+    "org": "claim.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/claim.com/tlsca/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/claim.com/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "governmentagency.claim.com": {
+    "key": "governmentagency.claim.com",
+    "org": "governmentagency.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/governmentagency.claim.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/governmentagency.claim.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "governmentagency.claim.com.tlsca": {
+    "key": "governmentagency.claim.com",
+    "org": "governmentagency.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/governmentagency.claim.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/governmentagency.claim.com/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "insurancecompany.claim.com": {
+    "key": "insurancecompany.claim.com",
+    "org": "insurancecompany.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/insurancecompany.claim.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/insurancecompany.claim.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "insurancecompany.claim.com.tlsca": {
+    "key": "insurancecompany.claim.com",
+    "org": "insurancecompany.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/insurancecompany.claim.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/insurancecompany.claim.com/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "orderer1.claim.com": {
+    "key": "orderer1.claim.com",
+    "org": "claim.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/claim.com/orderers/orderer1.claim.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/claim.com/orderers/orderer1.claim.com/msp/keystore/priv_sk",
+    "type": "orderers"
+  },
+  "orderer2.claim.com": {
+    "key": "orderer2.claim.com",
+    "org": "claim.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/claim.com/orderers/orderer2.claim.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/claim.com/orderers/orderer2.claim.com/msp/keystore/priv_sk",
+    "type": "orderers"
+  },
+  "orderer3.claim.com": {
+    "key": "orderer3.claim.com",
+    "org": "claim.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/claim.com/orderers/orderer3.claim.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/claim.com/orderers/orderer3.claim.com/msp/keystore/priv_sk",
+    "type": "orderers"
+  },
+  "orderer4.claim.com": {
+    "key": "orderer4.claim.com",
+    "org": "claim.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/claim.com/orderers/orderer4.claim.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/claim.com/orderers/orderer4.claim.com/msp/keystore/priv_sk",
+    "type": "orderers"
+  },
+  "peer1.governmentagency.claim.com": {
+    "key": "peer1.governmentagency.claim.com",
+    "org": "governmentagency.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/governmentagency.claim.com/peers/peer1.governmentagency.claim.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/governmentagency.claim.com/peers/peer1.governmentagency.claim.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "peer1.insurancecompany.claim.com": {
+    "key": "peer1.insurancecompany.claim.com",
+    "org": "insurancecompany.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/insurancecompany.claim.com/peers/peer1.insurancecompany.claim.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/insurancecompany.claim.com/peers/peer1.insurancecompany.claim.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "peer1.policedepartment.claim.com": {
+    "key": "peer1.policedepartment.claim.com",
+    "org": "policedepartment.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/policedepartment.claim.com/peers/peer1.policedepartment.claim.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/policedepartment.claim.com/peers/peer1.policedepartment.claim.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "peer1.vehiclemanufacturer.claim.com": {
+    "key": "peer1.vehiclemanufacturer.claim.com",
+    "org": "vehiclemanufacturer.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/vehiclemanufacturer.claim.com/peers/peer1.vehiclemanufacturer.claim.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/vehiclemanufacturer.claim.com/peers/peer1.vehiclemanufacturer.claim.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "policedepartment.claim.com": {
+    "key": "policedepartment.claim.com",
+    "org": "policedepartment.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/policedepartment.claim.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/policedepartment.claim.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "policedepartment.claim.com.tlsca": {
+    "key": "policedepartment.claim.com",
+    "org": "policedepartment.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/policedepartment.claim.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/policedepartment.claim.com/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "vehiclemanufacturer.claim.com": {
+    "key": "vehiclemanufacturer.claim.com",
+    "org": "vehiclemanufacturer.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/vehiclemanufacturer.claim.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/vehiclemanufacturer.claim.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "vehiclemanufacturer.claim.com.tlsca": {
+    "key": "vehiclemanufacturer.claim.com",
+    "org": "vehiclemanufacturer.claim.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/vehiclemanufacturer.claim.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/vehiclemanufacturer.claim.com/tlsca/priv_sk",
+    "type": "tlsca"
+  }
+}

@@ -1,0 +1,75 @@
+---
+OrdererOrgs:
+  - Name: claim.com
+    Domain: claim.com
+    Specs:
+      - Hostname: orderer1
+        SANS:
+          - 192.168.29.146
+      - Hostname: orderer2
+        SANS:
+          - 192.168.29.146
+      - Hostname: orderer3
+        SANS:
+          - 192.168.29.146
+      - Hostname: orderer4
+        SANS:
+          - 192.168.29.146
+
+PeerOrgs:
+  - Name: governmentagency.claim.com
+    Domain: governmentagency.claim.com
+    EnableNodeOUs: true
+    CA:
+      Hostname: ca1
+      CommonName: ca1.governmentagency.claim.com
+      Country: US
+      Province: North Carolina
+      Locality: Raleigh
+    Specs:
+      - Hostname: peer1
+        CommonName: peer1.governmentagency.claim.com
+        SANS:
+          - 192.168.29.146
+  - Name: insurancecompany.claim.com
+    Domain: insurancecompany.claim.com
+    EnableNodeOUs: true
+    CA:
+      Hostname: ca1
+      CommonName: ca1.insurancecompany.claim.com
+      Country: US
+      Province: North Carolina
+      Locality: Raleigh
+    Specs:
+      - Hostname: peer1
+        CommonName: peer1.insurancecompany.claim.com
+        SANS:
+          - 192.168.29.146
+  - Name: policedepartment.claim.com
+    Domain: policedepartment.claim.com
+    EnableNodeOUs: true
+    CA:
+      Hostname: ca1
+      CommonName: ca1.policedepartment.claim.com
+      Country: US
+      Province: North Carolina
+      Locality: Raleigh
+    Specs:
+      - Hostname: peer1
+        CommonName: peer1.policedepartment.claim.com
+        SANS:
+          - 192.168.29.146
+  - Name: vehiclemanufacturer.claim.com
+    Domain: vehiclemanufacturer.claim.com
+    EnableNodeOUs: true
+    CA:
+      Hostname: ca1
+      CommonName: ca1.vehiclemanufacturer.claim.com
+      Country: US
+      Province: North Carolina
+      Locality: Raleigh
+    Specs:
+      - Hostname: peer1
+        CommonName: peer1.vehiclemanufacturer.claim.com
+        SANS:
+          - 192.168.29.146

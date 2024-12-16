@@ -1,0 +1,9 @@
+version: '3'
+services:
+  container1:
+    image: hello-docker
+    container_name: hello-container-1
+
+  container2:
+    image: hello-docker
+    container_name: hello-container-2

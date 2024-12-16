@@ -1,0 +1,245 @@
+{
+  "allcas": [
+    {
+      "adminPassword": "adminpw",
+      "command": "fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove",
+      "fullname": "ca1.policedepartment.claim.com",
+      "mspid": "policedepartment-claim-com",
+      "name": "ca1",
+      "oport": "8000",
+      "org": "policedepartment.claim.com",
+      "port": "7000",
+      "portmap": "-p 7000:7054 -p 8000:9443",
+      "type": "ca",
+      "url": "192.168.29.146"
+    },
+    {
+      "adminPassword": "adminpw",
+      "command": "fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove",
+      "fullname": "ca1.governmentagency.claim.com",
+      "mspid": "governmentagency-claim-com",
+      "name": "ca1",
+      "oport": "8001",
+      "org": "governmentagency.claim.com",
+      "port": "7001",
+      "portmap": "-p 7001:7054 -p 8001:9443",
+      "type": "ca",
+      "url": "192.168.29.146"
+    },
+    {
+      "adminPassword": "adminpw",
+      "command": "fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove",
+      "fullname": "ca1.insurancecompany.claim.com",
+      "mspid": "insurancecompany-claim-com",
+      "name": "ca1",
+      "oport": "8002",
+      "org": "insurancecompany.claim.com",
+      "port": "7002",
+      "portmap": "-p 7002:7054 -p 8002:9443",
+      "type": "ca",
+      "url": "192.168.29.146"
+    },
+    {
+      "adminPassword": "adminpw",
+      "command": "fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove",
+      "fullname": "ca1.vehiclemanufacturer.claim.com",
+      "mspid": "vehiclemanufacturer-claim-com",
+      "name": "ca1",
+      "oport": "8003",
+      "org": "vehiclemanufacturer.claim.com",
+      "port": "7003",
+      "portmap": "-p 7003:7054 -p 8003:9443",
+      "type": "ca",
+      "url": "192.168.29.146"
+    }
+  ],
+  "allcouchdbs": [
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.policedepartment.claim.com.couchdb",
+      "mspid": "policedepartment-claim-com",
+      "name": "peer1.couchdb",
+      "org": "policedepartment.claim.com",
+      "port": "7008",
+      "portmap": "-p 7008:5984",
+      "type": "couchdb",
+      "url": "192.168.29.146"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.governmentagency.claim.com.couchdb",
+      "mspid": "governmentagency-claim-com",
+      "name": "peer1.couchdb",
+      "org": "governmentagency.claim.com",
+      "port": "7009",
+      "portmap": "-p 7009:5984",
+      "type": "couchdb",
+      "url": "192.168.29.146"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.insurancecompany.claim.com.couchdb",
+      "mspid": "insurancecompany-claim-com",
+      "name": "peer1.couchdb",
+      "org": "insurancecompany.claim.com",
+      "port": "7010",
+      "portmap": "-p 7010:5984",
+      "type": "couchdb",
+      "url": "192.168.29.146"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.vehiclemanufacturer.claim.com.couchdb",
+      "mspid": "vehiclemanufacturer-claim-com",
+      "name": "peer1.couchdb",
+      "org": "vehiclemanufacturer.claim.com",
+      "port": "7011",
+      "portmap": "-p 7011:5984",
+      "type": "couchdb",
+      "url": "192.168.29.146"
+    }
+  ],
+  "allorderers": [
+    {
+      "fullname": "orderer1.claim.com",
+      "mspid": "claim-com",
+      "name": "orderer1",
+      "oport": "8012",
+      "org": "claim.com",
+      "port": "7012",
+      "portmap": "-p 7012:7050 -p 8012:7060",
+      "type": "orderer",
+      "url": "192.168.29.146"
+    },
+    {
+      "fullname": "orderer2.claim.com",
+      "mspid": "claim-com",
+      "name": "orderer2",
+      "oport": "8013",
+      "org": "claim.com",
+      "port": "7013",
+      "portmap": "-p 7013:7050 -p 8013:7060",
+      "type": "orderer",
+      "url": "192.168.29.146"
+    },
+    {
+      "fullname": "orderer3.claim.com",
+      "mspid": "claim-com",
+      "name": "orderer3",
+      "oport": "8014",
+      "org": "claim.com",
+      "port": "7014",
+      "portmap": "-p 7014:7050 -p 8014:7060",
+      "type": "orderer",
+      "url": "192.168.29.146"
+    },
+    {
+      "fullname": "orderer4.claim.com",
+      "mspid": "claim-com",
+      "name": "orderer4",
+      "oport": "8015",
+      "org": "claim.com",
+      "port": "7015",
+      "portmap": "-p 7015:7050 -p 8015:7060",
+      "type": "orderer",
+      "url": "192.168.29.146"
+    }
+  ],
+  "allorgs": [
+    "claim.com",
+    "governmentagency.claim.com",
+    "insurancecompany.claim.com",
+    "policedepartment.claim.com",
+    "vehiclemanufacturer.claim.com"
+  ],
+  "allpeers": [
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.policedepartment.claim.com",
+      "mspid": "policedepartment-claim-com",
+      "name": "peer1",
+      "oport": "8004",
+      "org": "policedepartment.claim.com",
+      "port": "7004",
+      "portmap": "-p 7004:7051 -p 8004:7061",
+      "type": "peer",
+      "url": "192.168.29.146"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.governmentagency.claim.com",
+      "mspid": "governmentagency-claim-com",
+      "name": "peer1",
+      "oport": "8005",
+      "org": "governmentagency.claim.com",
+      "port": "7005",
+      "portmap": "-p 7005:7051 -p 8005:7061",
+      "type": "peer",
+      "url": "192.168.29.146"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.insurancecompany.claim.com",
+      "mspid": "insurancecompany-claim-com",
+      "name": "peer1",
+      "oport": "8006",
+      "org": "insurancecompany.claim.com",
+      "port": "7006",
+      "portmap": "-p 7006:7051 -p 8006:7061",
+      "type": "peer",
+      "url": "192.168.29.146"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.vehiclemanufacturer.claim.com",
+      "mspid": "vehiclemanufacturer-claim-com",
+      "name": "peer1",
+      "oport": "8007",
+      "org": "vehiclemanufacturer.claim.com",
+      "port": "7007",
+      "portmap": "-p 7007:7051 -p 8007:7061",
+      "type": "peer",
+      "url": "192.168.29.146"
+    }
+  ],
+  "caorgs": [
+    "governmentagency.claim.com",
+    "insurancecompany.claim.com",
+    "policedepartment.claim.com",
+    "vehiclemanufacturer.claim.com"
+  ],
+  "console_port": "7019",
+  "explorer_port": "7017",
+  "ordererorgs": [
+    "claim.com"
+  ],
+  "orgattrs": {
+    "claim.com": {
+      "certpath": "ordererOrganizations",
+      "mspid": "claim-com"
+    },
+    "governmentagency.claim.com": {
+      "certpath": "peerOrganizations",
+      "mspid": "governmentagency-claim-com"
+    },
+    "insurancecompany.claim.com": {
+      "certpath": "peerOrganizations",
+      "mspid": "insurancecompany-claim-com"
+    },
+    "policedepartment.claim.com": {
+      "certpath": "peerOrganizations",
+      "mspid": "policedepartment-claim-com"
+    },
+    "vehiclemanufacturer.claim.com": {
+      "certpath": "peerOrganizations",
+      "mspid": "vehiclemanufacturer-claim-com"
+    }
+  },
+  "peerorgs": [
+    "governmentagency.claim.com",
+    "insurancecompany.claim.com",
+    "policedepartment.claim.com",
+    "vehiclemanufacturer.claim.com"
+  ],
+  "portainer_port": "7018"
+}

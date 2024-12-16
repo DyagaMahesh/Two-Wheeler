@@ -1,0 +1,53 @@
+[
+    {
+        "name": "insurancePolicyPrivateCollection", 
+        "policy": {
+            "identities": [
+                {
+                    "role": {
+                        "name": "member",
+                        "mspId": "InsuranceOrgMSP"
+                    }
+                },
+                {
+                    "role": {
+                        "name": "member",
+                        "mspId": "DealerOrgMSP"
+                    }
+                },
+                {
+                    "role": {
+                        "name": "member",
+                        "mspId": "ManufacturerOrgMSP"
+                    }
+                }
+            ],
+            "readers": [
+                {
+                    "role": {
+                        "name": "member",
+                        "mspId": "InsuranceOrgMSP"
+                    }
+                },
+                {
+                    "role": {
+                        "name": "member",
+                        "mspId": "DealerOrgMSP"
+                    }
+                }
+            ],
+            "writers": [
+                {
+                    "role": {
+                        "name": "member",
+                        "mspId": "ManufacturerOrgMSP"
+                    }
+                }
+            ]
+        },
+        "requiredPeerCount": 1, 
+        "maximumPeerCount": 3, 
+        "blockToLive": 99, 
+        "memberOnlyRead": true 
+    }
+]
